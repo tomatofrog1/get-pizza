@@ -92,16 +92,20 @@
         @apply pt-[12rem] pb-[3rem]
     }
     .aboutBanner__wrapper{
-        @apply flex flex-col
+        @apply flex flex-col lg:flex-row lg:grid lg:grid-cols-2 h-[30rem]
     }
     .aboutBanner iframe{
-        @apply w-[24rem] h-[16rem] mx-auto
+        @apply w-[24rem] h-[16rem] mx-auto lg:w-full lg:h-full
     }
     .aboutBanner h1{
         @apply font-bold text-5xl py-6 text-primary
     }
+    .aboutBanner__text{
+        @apply flex flex-col justify-center items-start p-[5rem]
+    }
+    
     /* story */
-    .story{
+    /* .story{
         @apply pb-[3rem]
     }
     .story__wrapper{
@@ -119,7 +123,43 @@
     }
     .story__year p{
         @apply font-semibold
+    } */
+
+
+    /* story ni maam */
+    .story{
+        @apply py-10
     }
+    .story h3{
+        @apply font-bold text-center text-4xl mb-5
+    }
+    .story__content{
+        @apply text-justify
+    }
+    .story__item{
+        @apply mb-5 max-w-[35rem] mx-auto
+    }
+    .story__item h4, 
+    .story__item i{
+        @apply bg-primary text-white px-3 py-2 font-bold flex justify-between items-center cursor-pointer
+    }
+    .story__item i.open{
+        @apply rotate-180
+    }
+    .story__item p{
+        @apply bg-slate-50 h-auto max-h-0 overflow-hidden duration-500
+    }
+    .story__item p.open{
+        @apply max-h-[50rem] bg-slate-50 p-3 duration-500
+    }
+    .story__container{
+        @apply lg:flex justify-around items-center
+    }
+    .story__container img{
+        @apply hidden lg:block lg:rounded-xl
+    }
+        
+
     /* reviews */
     .reviews{
         @apply py-12
@@ -131,13 +171,127 @@
         @apply text-3xl font-bold text-center;
     }
     .reviews__slider--items{
-        @apply flex flex-col items-center justify-center text-center
-    }
+            @apply flex flex-col items-center justify-center text-center
+        }
     .reviews__slider--items img{
-        @apply rounded-full w-[6rem] py-[1rem]
+        @apply rounded-full w-[6rem] py-[1rem] mx-auto
     }
     .reviews__slider--items p:first-of-type{
-        @apply mb-8
+        @apply mb-8 mx-auto max-w-[28rem] lg:max-w-[40rem]
+    }
+    /* tns */
+    .tns-outer{
+        @apply overflow-hidden  
+    }
+    .tns-outer button{
+        @apply hidden;
+    }
+
+    /* MENU BANNER */
+    .menuBanner{
+        @apply h-screen  bg-menu bg-no-repeat bg-cover
+    }
+    .menuBanner br:first-of-type{
+        @apply lg:hidden 
+    }
+    .menuBanner__wrapper{
+        @apply flex justify-center items-center
+    }
+    .menuBanner h1{
+        @apply text-white font-bold text-3xl pt-[25.5rem]
+        /* desktop */
+        lg:text-center lg:text-5xl
+    }
+
+    /* menu tabs */
+    .menuTabs{
+        @apply py-10 bg-tertiary h-[53rem]
+
+    }
+    .menuTabs__wrapper{
+        @apply flex flex-col justify-center items-center
+    }
+    .menuTabs__tab{
+        @apply flex gap-4 bg-secondary py-4 px-3 rounded-2xl mb-[2rem]
+        /* desktop */
+        lg:gap-8 lg:px-12
+    }
+    .menuTabs__tab span{
+        @apply w-[1px] h-[1.4rem] bg-white
+    }
+    .menuTabs__tab li{
+        @apply font-bold text-tertiary cursor-pointer
+    }
+    .menuTabs__tab li.active{
+        @apply  text-primary
+    }
+    .menuTabs__details--wrap{
+        @apply grid grid-cols-3 gap-3
+    }
+    .menuTabs__foods{
+        @apply flex flex-col justify-center items-center mb-[1rem]
+        lg:px-[2rem] lg:py-[1rem] lg:border lg:border-white lg:rounded-xl
+    }
+    .menuTabs__foods--text{
+        @apply flex flex-col justify-center items-center text-white font-semibold
+    }
+    .menuTabs__foods img{
+        @apply w-[8rem] mb-[1rem]
+    }
+    .menuTabs__content{
+        @apply relative w-[40rem] 
+        /* @apply flex */
+    }
+    .menuTabs__details{
+       @apply  absolute  opacity-0 w-[30rem] left-[5rem] lg:w-[40rem] lg:left-0
+    }
+    .menuTabs__details.active{
+        @apply  opacity-100 duration-1000
+    }
+
+    /* maps */
+
+    .map__wrapper{
+        @apply pt-[8rem] pb-[2rem]
+        lg:flex lg:justify-center
+    }
+    .map__wrapper iframe{
+        @apply w-[29rem] h-[35rem] lg:w-[60vw]
+    }
+
+    /* git */
+    .git{
+        @apply bg-secondary
+    }
+    .git__wrapper{
+        @apply flex flex-col items-center py-[2rem]
+        
+    }
+    .git__wrapper h2{
+        @apply text-5xl font-bold
+    }
+    .git__wrapper form{
+        @apply flex flex-col gap-4 py-[2rem]
+        lg:w-[50rem] lg:justify-between
+    }
+    .git__wrapper .fullName{
+        @apply flex gap-[1rem]
+    }
+    .git__wrapper .fullName input{
+        @apply lg:w-[49%]
+    }
+    .git__wrapper input{
+        @apply py-2 px-3 rounded-lg
+    }
+    .git__wrapper input:focus{
+        @apply outline-none
+    }
+    .git__wrapper textarea{
+        @apply pb-[10rem] rounded-lg
+        py-2 px-3 resize-none
+    }
+    .git__wrapper textarea:focus{
+        @apply outline-none
     }
 }
 
@@ -259,6 +413,4 @@
     .footer__details h3{
         @apply font-bold text-2xl
     }
-    
-    
 }

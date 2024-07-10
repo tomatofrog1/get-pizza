@@ -1,4 +1,4 @@
-var clientSlider = tns({
+var slider = tns({
     container: ".reviews__slider",
     items: 1,
     speed: 100,
@@ -7,9 +7,5 @@ var clientSlider = tns({
     autoplay: true,
     controls: false,
     nav: false,
-    // navPosition: "bottom",
-    // axis: "horizontal",
-    // containerControls: "#service__controls",
-    // prevButton: ".prev",
-    // nextButton: ".next",
+    autoplayButtonOutput: false,
   });
